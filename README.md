@@ -14,5 +14,8 @@ Ejercicio 12: buscamos las películas donde rating sea distinto de NC-17 y G. Pa
 Ejercicio 13: dentro de la tabla film, buscamos el promedio de length mediante la función avg(length). Mostramos una tabla con los distintos tipos de clasificaciones y su duración promedio haciendo un group by rating.
 Ejercicio 14: buscamos que la duración de las películas sea mayor que 180 minutos, para ello usamos la condición where length>180 dentro de la tabla film. Como resultado mostramos el título y la duración de cada película que cumple la condición.
 Ejercicio 15: buscamos el total dinero generado, para ello sumamos la columna amount con la función sum, dentro de la tabla payment.
-Ejercicio 16: buscamos los 10 primeros id de dichos clientes.
+Ejercicio 16: buscamos los 10 clientes con mayor id, para ello ordenamos los customer_id con un order by de mayor a menor con desc y para seleccionar los 10 primeros usamos un limit 10.
+Ejercicio 17: buscamos el nombre y apellidos de los actores que aparecen en una película. Por un lado tenemos el atributo del título de la película en la tabla film, y los nombres de los actores en la tabla actor. Ambas tablas se relacionan mediante film_id y actor_id , que están en la tabla film_actor. Por tanto para relacionar estas 3 tablas utilizamos dos inner joins donde unimos las tablas por las columnas que tienen en común. Del resultado de unir estas tablas, seleccionamos los nombres y apellidos que cumplan la condición de que el título que les corresponde sea el que se busca (con un where). Todo este comando lo metemos dentro de una tabla temporal para que sea más organizada la sintaxis , con un with() y finalmente mostramos el resultado de esta tabla temporal con el select principal.
+
+
 
