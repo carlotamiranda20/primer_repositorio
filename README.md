@@ -1,4 +1,5 @@
 MEMORIA DE CONSULTAS SQL
+
 Para el ejercicio 1, crear el esquema, una vez agregada la base de datos BBDD_proyecto, generamos el diagrama, y lo guardamos como jpeg.
 
 Ejercicio 2: buscamos las películas donde la columna rating sea R, dentro de la tabla film. Mostramos una lista con los títulos de dichas películas.
