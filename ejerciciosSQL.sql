@@ -10,7 +10,7 @@ where rating='R';
 y 40.*/
 
 
-select concat("first_name", ' ', "last_name") as actores
+select concat(first_name, ' ', last_name) as actores
 from actor a
 where actor_id between 30 and 40;
 
@@ -178,7 +178,7 @@ forma descendente.*/
 select date(rental_date) as dia_alquiler, count(*) as num_alquiler
 from rental 
 group by date(rental_date)
-order by num_alquiler asc;
+order by num_alquiler desc;
 
 
 /* Ejercicio 24. Encuentra las películas con una duración superior al promedio*/
@@ -230,7 +230,7 @@ mostrar la cantidad disponible.*/
 
 select f.film_id, f.title as titulo, count(i.inventory_id) as num_disponible
 from film f
-join inventory i on f.film_id=i.film_id 
+left join inventory i on f.film_id=i.film_id 
 group by f.film_id;
 
 
@@ -247,8 +247,8 @@ ellas, incluso si algunas películas no tienen actores asociados.*/
 
 select f.title, concat(a.first_name, ' ', a.last_name) as actor
 from film f
-full join film_actor fa on f.film_id=fa.film_id
-full join actor a on a.actor_id=fa.actor_id
+left join film_actor fa on f.film_id=fa.film_id
+left join actor a on a.actor_id=fa.actor_id
 order by f.title;
 
 
@@ -256,9 +256,9 @@ order by f.title;
 actuado, incluso si algunos actores no han actuado en ninguna película.*/
 
 select concat(a.first_name, ' ', a.last_name) as actor, f.title
-from film f
-full join film_actor fa on f.film_id=fa.film_id
-full join actor a on a.actor_id=fa.actor_id
+from actor a 
+left join film_actor fa on fa.actor_id=a.actor_id
+left join film f on f.film_id=fa.film_id
 order by a.first_name;
 
 /* Ejercicio 33. Obtener todas las películas que tenemos y todos los registros de
