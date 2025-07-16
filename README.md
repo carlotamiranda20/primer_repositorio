@@ -56,13 +56,13 @@ Ejercicio 27: buscamos el precio medio de las películas, para ello calculamos a
 
 Ejercicio 28: el id de los actores está en actor_id dentro de film_actor. Primero agrupamos las filas que tienen el mismo actor_id con un group by. Imponemos la condición de que el número de film_id que corresponden a cada actor_id sea mayor que 40 con having, ya que count es una función de agregación. Mostramos el actor_id y el número de películas en la que ha participado.
 
-Ejercicio 29: para relacionar las películas con el inventario necesitamos hacer un join entre las tablas inventory y film, a través de film_id. Para obtener la cantidad disponible usamos count(i.inventory_id) y previamente para utilizar el count como es una función de agregación hacemos un group by . Mostramos el film_id, el nombre de la película y la cantiad disponible en el inventario.
+Ejercicio 29: para relacionar las películas con el inventario necesitamos hacer un left join entre las tablas inventory y film, a través de film_id, para que aparezcan las películas sin registro, es decir cuando su valor sea NULL. Para obtener la cantidad disponible usamos count(i.inventory_id) y previamente para utilizar el count como es una función de agregación hacemos un group by . Mostramos el film_id, el nombre de la película y la cantiad disponible en el inventario.
 
 Ejercicio 30: buscamos relacionar los nombres de los actores con el número de películas, para ello tenemos que unir las tablas film_actor y actor con un join a través del actor_id. Para contar las películas primero usamos un group by y luego hacemos un count(f.film_id). Para mostrar también el nombre y el apellido hay que hacer un group by con dichas columnas.
 
-Ejercicio 31: en este caso para relacionar los nombres de las películas con los actores tenemos que unir las tablas film, actor_film y actor. Como se pide mostrar todas las películas aunque no tengan actores asociados, hacemos un full join para unir también los valores nulos. Mostramos el título y el nombre de los actores. 
+Ejercicio 31: en este caso para relacionar los nombres de las películas con los actores tenemos que unir las tablas film, actor_film y actor. Como se pide mostrar todas las películas aunque no tengan actores asociados, hacemos un left join. Mostramos el título y el nombre de los actores. 
 
-Ejercicio 32: exactamente igual que el ejercicio anterior solo que como ahora nos interesan los actores ordenamos por nombre de los actores en lugar de nombre de películas (para mejorar la legibilidad ya que la tabla está formada por las mismas filas)
+Ejercicio 32: exactamente igual que el ejercicio anterior solo que como ahora nos interesan los actores ordenamos por nombre de los actores en lugar de nombre de películas (para mejorar la legibilidad ya que la tabla está formada por las mismas filas). Hacemos los left join en sentido contrario al ejercicio anterior.
 
 Ejercicio 33: para obtener todas las películas y todos los registros de alquiler necesitamos unir las tablas film y rental mediante la tabla intermedia inventory. Como queremos todas las películas aunque no tengan un registro asociado, y todos los registros aunque no tengan una película asociada utilizamos el full join. (suponemos que registro incluye rental_id, rental_date  return_date).
 
