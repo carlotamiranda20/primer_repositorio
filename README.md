@@ -44,7 +44,7 @@ Ejercicio 21: para calcular la media de duración del alquier, aplicamos la func
 
 Ejercicio 22: para unir los nombres y apellidos de los actores (columnas first_name y last_name de la tabla actor) utilizamos concat() colocando entre comillas simples un espacio en blanco para separar los caracteres.
 
-Ejercicio 23: buscamos el número de alquiler por día. Para ello usamos la columna rental_date dentro de la tabla rental. Para seleccionar solo la fecha y no la hora, usamos la función date(). Con el group by agrupamos según la fecha, y con el count(*) contamos el número de veces que se repite la fecha (el número de alquileres por cada día). Por último ordenamos el número de alquileres con un asc para que sea de menor a mayor. 
+Ejercicio 23: buscamos el número de alquiler por día. Para ello usamos la columna rental_date dentro de la tabla rental. Para seleccionar solo la fecha y no la hora, usamos la función date(). Con el group by agrupamos según la fecha, y con el count(*) contamos el número de veces que se repite la fecha (el número de alquileres por cada día). Por último ordenamos el número de alquileres con un desc para que sea de mayor a menor.
 
 Ejercicio 24: buscamos las películas y su duración en la tabla film. Creamos una tabla temporal donde se almacene el valor promedio de la duración, avg(length). Luego esta tabla temporal la utilizamos para imponer la condición de que la duración de las películas sea mayor que el valor promedio. Mostramos una tabla con el título de la película y su duración.
 
